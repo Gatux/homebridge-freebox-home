@@ -1,12 +1,13 @@
 #!/bin/bash
 
 git pull
+sudo apt update
 
 CURL_EXISTS=`which curl`
 
 if [ -d ${CURL_EXISTS} ]; then
     echo "[i] Installing curl..."
-    sudo apt-get --assume-yes install curl
+    sudo apt --assume-yes install curl
 fi
 
 NODE_EXISTS=`which node`
@@ -14,8 +15,8 @@ NODE_EXISTS=`which node`
 if [ -d ${NODE_EXISTS} ]; then
     echo "[i] Installing nodejs..."
     # curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-    sudo apt-get --assume-yes install nodejs
-    sudo apt-get --assume-yes install npm
+    sudo apt --assume-yes install nodejs
+    sudo apt --assume-yes install npm
 fi
 
 #if [ ! -d /usr/local/lib/node_modules/n ]; then
